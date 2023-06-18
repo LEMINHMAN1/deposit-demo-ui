@@ -12,7 +12,7 @@ import { useSetAtom } from "jotai";
 import { userAtom } from "@/atom";
 
 const Schema = Yup.object().shape({
-  amount: Yup.number().required('Required').min(1, "Please deposit with min 10$"),
+  amount: Yup.number().required('Required').min(1, "Please deposit with min 1$"),
 });
 
 export default function Page() {
