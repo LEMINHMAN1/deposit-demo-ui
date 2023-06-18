@@ -15,8 +15,10 @@ export default function TableRow({ data, onOpenModal }: Props) {
 
     
     const dueDate = moment(data.dueDate)
+    const date = moment();
+    const diff = dueDate.diff(date, "s");
 
-    const [remaning, setRemaning] = useState("00:00:00");
+    const [remaning, setRemaning] = useState(diff>0 ? toTimeString(diff) : "00:00:00");
     useEffect(() => {
         const intervalId = setInterval(() => {
             const date = moment();
