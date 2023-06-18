@@ -1,10 +1,10 @@
 'use client';
-import { useAtom } from "jotai";
-import { toast } from 'react-toastify';
-import { userAtom } from "./../atom"
 import { UserRequest, UserResponse } from "@/types/User";
-import { useAPI } from "./useHttp";
+import { useAtom } from "jotai";
 import { useRouter } from 'next/navigation';
+import { toast } from 'react-toastify';
+import { userAtom } from "./../atom";
+import { useAPI } from "./useHttp";
 
 export function useAuth() {
     const [user, setUser] = useAtom(userAtom);

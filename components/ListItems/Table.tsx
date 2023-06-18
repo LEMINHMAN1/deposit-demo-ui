@@ -1,25 +1,16 @@
 'use client';
 
-import { useHttpGetAutoCached } from "@/hook/useHttp";
 import { Bid } from "@/types/Bid";
-import { useRouter } from "next/navigation";
-import { useEffect } from "react";
-import TableRow from "./_TableRow";
 import { isEmpty } from "lodash";
+import TableRow from "./_TableRow";
 
 
 interface Props {
+    isLoading: boolean
     onOpenModal: (bid: any) => void;
-    filterType: "all" | "ongoing" | "completed"
+    data?: Bid[]
 }
-export default function Table({ onOpenModal, filterType }: Props) {
-
-    const { data, isLoading, refetch } = useHttpGetAutoCached<null, any>(`/bid/get?filterType=${filterType}`);
-
-    const router = useRouter();
-    useEffect(() => {
-        refetch();
-    }, [router]);
+export default function Table({ isLoading = true, onOpenModal, data }: Props) {
 
     if (isLoading) return (<div>Loading...</div>)
 
