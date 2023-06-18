@@ -10,9 +10,9 @@ Then the application will run dev mode at: http://localhost:3000
 * Typescript
 * React version: 18.2.0
 * NextJS, version: 13.4.5
-* Jotai, version:  2.2.0
-* Styled Component, version: 6.0.0-rc.3
-* React query, version: 3.34.19
+* Jotai for state management, version:  2.2.0
+* Styled Component for stylesheet custom, version: 6.0.0-rc.3
+* React query for cache API calling, version: 3.34.19
 
 ## Code Structure:
 * app : contains the pages of the application
