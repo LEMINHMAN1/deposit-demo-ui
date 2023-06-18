@@ -26,10 +26,13 @@ export default function ListItems() {
 
     useEffect(()=>{
         if(userData){
-            console.log(userData,'xxxx')
             setUser(userData);
         }
     },[userData]);
+
+    useEffect(()=>{
+        refetchUser();
+    },[]);
 
     return (
         <Styled>
